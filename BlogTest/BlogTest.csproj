@@ -53,7 +53,7 @@
       <HintPath>..\packages\GenericRepository.EF.0.2.1.0\lib\net40\GenericRepository.EF.dll</HintPath>
     </Reference>
     <Reference Include="Kendo.Mvc">
-      <HintPath>C:\Program Files (x86)\Telerik\Kendo UI for ASP.NET MVC Q2 2012 SP1\wrappers\aspnetmvc\Binaries\Mvc3\Kendo.Mvc.dll</HintPath>
+      <HintPath>..\packages\Kendo\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NLog">
