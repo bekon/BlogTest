@@ -28,5 +28,5 @@
             { field: "LastActivityDate", title: "Last activity date", format: "{0:dd/MMMM/yyyy}", filterable: false },
         ]
     });
-    $(".k-grid-header-wrap th").css("text-align", "center");
+
 });

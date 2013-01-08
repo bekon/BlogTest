@@ -34,7 +34,7 @@
             { field: "Change", title: "Change", template: '<input type=\'button\' value=\'Change\' onClick="changeRole(\'#=UserName#\')" />', width: 150, filterable: false },
         ]
     });
-    $(".k-grid-header-wrap th").css("text-align", "center");
+
 });
 function changeRole(user) {
     $.ajax({

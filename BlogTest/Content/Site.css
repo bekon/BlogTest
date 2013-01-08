@@ -352,6 +352,11 @@ article {
     text-align: center;
 }
 
+.k-grid-header-wrap
+{
+    text-align: center;
+}
+
 #usersgrid
 {
     max-width: 800px;
