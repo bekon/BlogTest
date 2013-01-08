@@ -6,7 +6,6 @@
         },
         dataSource: {
             serverPaging: true,
-            serverSorting: true,
             pageSize: 25,
             schema: {
                 type: "json",
@@ -25,7 +24,6 @@
         },
         height: 280,
         scrollable: { virtual: true },
-        sortable: true,
         filterable: true,
         columns: [
             { field: "UserName", title: "User", width: 170, },

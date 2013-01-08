@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using GenericRepository.EF;
 using GenericRepository;
-
+using DataLayer.Contexts;
 
 namespace DataLayer
 {

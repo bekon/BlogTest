@@ -352,7 +352,12 @@ article {
     text-align: center;
 }
 
-.k-grid-header-wrap
+#usersgrid .k-grid-header-wrap th
+{
+    text-align: center;
+}
+
+#grid .k-grid-header-wrap th
 {
     text-align: center;
 }
@@ -366,6 +371,7 @@ article {
 .post-content
 {
     font-size: 15px;
+    white-space: pre-line;
 }
 
 aside {
