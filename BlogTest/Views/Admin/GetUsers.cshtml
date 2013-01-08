@@ -1,0 +1,24 @@
+﻿@model List<BlogTest.Models.UserModel>
+
+@{
+    Layout = null;
+}
+@foreach (BlogTest.Models.UserModel item in Model)
+{
+    <div class="UserBlock">
+    <b class="user">@item.UserName</b> is in role @item.Role
+    @(Html.Kendo().DropDownList().HtmlAttributes("class='NewRole'").Name("Role" + item.UserName).Items( items => 
+                 {
+                     foreach (string role in ViewBag.Roles)
+                     {
+                         //if(!User.IsInRole(role))
+                         items.Add().Text(role).Value(role);
+                     }
+                 }))
+         <input type="button" value="Change role" class="ChangeRoleButton" onclick="changeRole('@item.UserName')"/><br />
+        </div>
+}
+@for (int i = 1; i <= ViewBag.PagesCount; i++)
+{
+    <a class="page">@i</a>
+}

@@ -1,0 +1,14 @@
+2013-01-07 19:55:26.9833|INFO|BlogTest.Controllers.HomeController|Missing type map configuration or unsupported mapping.
+
+Mapping types:
+EntryModel -> Entry
+BlogTest.Models.EntryModel -> DataLayer.Entry
+
+Destination path:
+Entry
+
+Source value:
+BlogTest.Models.EntryModel
+2013-01-08 15:41:46.6295|ERROR|BlogTest.Filters.BlogoHandleErrorAttribute|Attempted to divide by zero.
+2013-01-08 15:57:01.6058|ERROR|BlogTest.Filters.BlogoHandleErrorAttribute|Controller: Home, Action: IndexAttempted to divide by zero.
+2013-01-08 15:58:02.8883|ERROR|BlogTest.Filters.BlogoHandleErrorAttribute|Controller: Home, Action: AboutAttempted to divide by zero.

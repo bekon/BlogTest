@@ -1,0 +1,18 @@
+﻿@model BlogTest.Models.EntryModel[]
+
+@{
+    Layout = null;
+}
+
+@foreach (BlogTest.Models.EntryModel item in Model)
+    {
+        
+        <b>@Html.ActionLink(item.Title, "ViewEntry", new { id = item.Id }, new { @class = "title" })</b><br />
+         <span class="created">@item.Created.ToString() Author: @Html.ActionLink(@item.Author, "UserPosts", new { user = @item.Author })</span><br />
+      if (item.Content.Length > 50)
+      {
+        <p class="post-content">@(item.Content.Substring(0, 50) + "...")</p>}
+      else
+      { <p class="post-content">@item.Content</p>}
+                            
+    }

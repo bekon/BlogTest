@@ -1,0 +1,30 @@
+﻿@model BlogTest.Models.EntryModel
+@{
+    ViewBag.Title = "ViewEntry";
+}
+
+<fieldset>
+    <legend>Entry</legend>
+    <div class="title">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+    <div class="created">
+        @Html.DisplayFor(model => model.Created) 
+        <span class="author"> Author: 
+        @Html.ActionLink(Model.Author, "UserPosts", new { user = Model.Author })
+    </span>
+    </div>
+    
+    <div class="post-content">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+    
+    
+</fieldset>
+<p>
+    @if((Model.Author == User.Identity.Name && User.IsInRole("writer")) || User.IsInRole("chief")){
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) }
+    @Html.ActionLink("Back to List", "Index")
+    @if((Model.Author == User.Identity.Name && User.IsInRole("writer")) || User.IsInRole("chief")){
+        @Html.ActionLink("Delete", "Delete", new { id=Model.Id })}
+</p>

@@ -1,0 +1,18 @@
+﻿@model BlogTest.Models.EntryModel[]
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+<script src="@Url.Content("~/Scripts/GetPage.js")"></script>
+<div id="entries">
+
+</div>
+@if (Request.QueryString["user"] == "")
+{
+Html.ActionLink("Add post", "Add");
+}
+<br /> <span>Pages
+@for (int i = 1; i <= ViewBag.PagesCount; i++)
+{
+    <a class="page">@i</a>
+}</span>
