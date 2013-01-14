@@ -231,7 +231,7 @@ namespace BlogTest.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns>List of bloggers in JSON format</returns>
-        public ActionResult GetBloggers([DataSourceRequest] DataSourceRequest request)
+        public ActionResult GetBloggers(GridRequestModel request)
         {
             int total;
             MembershipUserCollection users = Membership.GetAllUsers(request.Page - 1, request.PageSize, out total);

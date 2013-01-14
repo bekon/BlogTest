@@ -31,7 +31,7 @@ namespace BlogTest.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public ActionResult GetUsers([DataSourceRequest] DataSourceRequest request)
+        public ActionResult GetUsers(GridRequestModel request)
         {
             int total;
             MembershipUserCollection users = Membership.GetAllUsers(request.Page - 1, request.PageSize, out total);

@@ -190,6 +190,8 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\BloggerModel.cs" />
     <Compile Include="Models\EntryModel.cs" />
+    <Compile Include="Models\GridRequestModel.cs" />
+    <Compile Include="Models\CorrectSortDescriptor.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
