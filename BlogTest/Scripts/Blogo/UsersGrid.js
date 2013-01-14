@@ -19,7 +19,15 @@
                 }
             },
             transport: {
-                read: "GetUsers"
+                read: {
+                    url: "GetUsers",
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json"
+                },
+                parameterMap: function (options) {
+                    return kendo.stringify(options);
+                }
             }
         },
         height: 280,

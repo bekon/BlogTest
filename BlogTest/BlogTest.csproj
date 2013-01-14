@@ -192,6 +192,9 @@
     <Compile Include="Models\EntryModel.cs" />
     <Compile Include="Models\GridRequestModel.cs" />
     <Compile Include="Models\CorrectSortDescriptor.cs" />
+    <Compile Include="Models\Kendo\KendoGridRequest.cs" />
+    <Compile Include="Models\Kendo\KendoGridResult.cs" />
+    <Compile Include="Models\Kendo\KendoSort.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

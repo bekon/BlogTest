@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using BlogTest.Models;
+using BlogTest.Models.Kendo;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 using BlogTest.Filters;
@@ -31,25 +32,22 @@ namespace BlogTest.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public ActionResult GetUsers(GridRequestModel request)
+        public ActionResult GetUsers(KendoGridRequest request)
         {
             int total;
-            MembershipUserCollection users = Membership.GetAllUsers(request.Page - 1, request.PageSize, out total);
-            List<UserModel> lst = new List<UserModel>();
+            var users = Membership.GetAllUsers(request.page - 1, request.pageSize, out total);
+            var usersList = new List<UserModel>();
             foreach (MembershipUser item in users)
             {
-                UserModel usrMod = new UserModel();
-                usrMod.UserName = item.UserName;
-                string[] roles = Roles.GetRolesForUser(item.UserName);
-                usrMod.Role = roles[0];
-                lst.Add(usrMod);
+                var userModel = new UserModel {UserName = item.UserName};
+                var roles = Roles.GetRolesForUser(item.UserName);
+                if (roles.Length > 0)
+                {
+                    userModel.Role = roles[0];
+                }
+                usersList.Add(userModel);
             }
-            request.Page = 1;
-            DataSourceResult res = lst.ToDataSourceResult(request);
-            res.Total = total;
-            ViewBag.PagesCount = Math.Ceiling((float)total / (float)request.PageSize);
-            ViewBag.Roles = MvcApplication.UserRoles;
-            return Json(res, JsonRequestBehavior.AllowGet);
+            return Json(new KendoGridResult {Data = usersList, Total = total});
         }
 
         /// <summary>
